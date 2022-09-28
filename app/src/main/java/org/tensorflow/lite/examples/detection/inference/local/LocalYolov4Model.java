@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class LocalYolov3Model extends LocalInferenceModel {
+public class LocalYolov4Model extends LocalInferenceModel {
     public static List<String> cocoNames = Arrays.asList(
             "person", "bicycle", "motorbike", "airplane", "bus", "train", "truck", "boat",
             "traffic light", "fire hydrant", "stop sign", "parking meter", "car", "bench",
@@ -28,7 +28,7 @@ public class LocalYolov3Model extends LocalInferenceModel {
             "teddy bear", "hair drier", "toothbrush");
     private Net net;
 
-    public LocalYolov3Model(Context context) {
+    public LocalYolov4Model(Context context) {
         super(context);
         initialize();
     }

@@ -4,13 +4,11 @@ import android.content.Context;
 import android.util.Log;
 
 import org.opencv.core.CvException;
-import org.tensorflow.lite.examples.detection.CameraActivity;
 import org.tensorflow.lite.examples.detection.enums.MODEL_NAME;
 import org.tensorflow.lite.examples.detection.settings.ModelInfo;
 import org.tensorflow.lite.examples.detection.inference.local.LocalInferenceModel;
 import org.tensorflow.lite.examples.detection.inference.local.LocalPosenetModel;
-import org.tensorflow.lite.examples.detection.inference.local.LocalSegmentModel;
-import org.tensorflow.lite.examples.detection.inference.local.LocalYolov3Model;
+import org.tensorflow.lite.examples.detection.inference.local.LocalYolov4Model;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,7 +41,7 @@ public class LocalInferencer implements InferenceStrategy {
 
         try {
             Log.i(TAG, "## initialize local yolo model");
-            LocalYolov3Model localYoloModel = new LocalYolov3Model(context);
+            LocalYolov4Model localYoloModel = new LocalYolov4Model(context);
             localModels.put(MODEL_NAME.YOLOV2, localYoloModel);
             localModels.put(MODEL_NAME.YOLOV3, localYoloModel);
             localModels.put(MODEL_NAME.YOLOV4, localYoloModel);
