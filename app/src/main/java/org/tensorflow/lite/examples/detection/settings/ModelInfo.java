@@ -23,6 +23,8 @@ public class ModelInfo {
     private static int LOCAL_CROP_SIZE = 608;
     private static int POSENET_AIX_CROP_SIZE = 513;
     private static int POSENET_GPU_CROP_SIZE = 513;
+    private static int YOLOV4_AIX_CROP_SIZE = 500;
+    private static int YOLOV4_GPU_CROP_SIZE = 500;
     private static int YOLOV3_AIX_CROP_SIZE = 608;
     private static int YOLOV3_GPU_CROP_SIZE = 416;
     private static int YOLOV2_AIX_CROP_SIZE = 608;
@@ -52,6 +54,7 @@ public class ModelInfo {
         cropMap.put(MODEL_NAME.POSENET, new HashMap<>());
         cropMap.put(MODEL_NAME.YOLOV2, new HashMap<>());
         cropMap.put(MODEL_NAME.YOLOV3, new HashMap<>());
+        cropMap.put(MODEL_NAME.YOLOV4, new HashMap<>());
         cropMap.put(MODEL_NAME.SEGMENTATION, new HashMap<>());
         cropMap.put(MODEL_NAME.SUPERNOVA, new HashMap<>());
 
@@ -61,6 +64,8 @@ public class ModelInfo {
         cropMap.get(MODEL_NAME.YOLOV2).put(DEVICE_TYPE.GPU, YOLOV2_GPU_CROP_SIZE);
         cropMap.get(MODEL_NAME.YOLOV3).put(DEVICE_TYPE.AIX, YOLOV3_AIX_CROP_SIZE);
         cropMap.get(MODEL_NAME.YOLOV3).put(DEVICE_TYPE.GPU, YOLOV3_GPU_CROP_SIZE);
+        cropMap.get(MODEL_NAME.YOLOV4).put(DEVICE_TYPE.AIX, YOLOV4_AIX_CROP_SIZE);
+        cropMap.get(MODEL_NAME.YOLOV4).put(DEVICE_TYPE.GPU, YOLOV4_GPU_CROP_SIZE);
         cropMap.get(MODEL_NAME.SUPERNOVA).put(DEVICE_TYPE.AIX, SUPERNOVA_AIX_CROP_SIZE);
         cropMap.get(MODEL_NAME.SUPERNOVA).put(DEVICE_TYPE.GPU, SUPERNOVA_GPU_CROP_SIZE);
         cropMap.get(MODEL_NAME.SEGMENTATION).put(DEVICE_TYPE.AIX, SEGMENTATION_AIX_CROP_SIZE);
@@ -69,12 +74,14 @@ public class ModelInfo {
         deviceTypeMap = new HashMap<>();
         deviceTypeMap.put(MODEL_NAME.POSENET, DEVICE_TYPE.AIX);
         deviceTypeMap.put(MODEL_NAME.YOLOV3, DEVICE_TYPE.AIX);
+        deviceTypeMap.put(MODEL_NAME.YOLOV4, DEVICE_TYPE.AIX);
         deviceTypeMap.put(MODEL_NAME.YOLOV2, DEVICE_TYPE.AIX);
         deviceTypeMap.put(MODEL_NAME.SEGMENTATION, DEVICE_TYPE.AIX);
         deviceTypeMap.put(MODEL_NAME.SUPERNOVA, DEVICE_TYPE.AIX);
         versionMap.put(MODEL_NAME.POSENET, VERSION.V2003);
         versionMap.put(MODEL_NAME.YOLOV2, VERSION.V2003);
         versionMap.put(MODEL_NAME.YOLOV3, VERSION.V2003);
+        versionMap.put(MODEL_NAME.YOLOV4, VERSION.V2003);
         versionMap.put(MODEL_NAME.SUPERNOVA, VERSION.V2106);
     }
 

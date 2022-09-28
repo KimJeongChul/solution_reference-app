@@ -14,7 +14,7 @@ public class PostprocessStrategyFactory {
         MODE mode = info.getMode();
         DEVICE_TYPE device = info.getDeviceType();
         if (mode.equals(MODE.LOCAL)) {
-            if (model.equals(MODEL_NAME.YOLOV2) || model.equals(MODEL_NAME.YOLOV3)) {
+            if (model.equals(MODEL_NAME.YOLOV2) || model.equals(MODEL_NAME.YOLOV3) || model.equals(MODEL_NAME.YOLOV4)) {
                 return new LocalYoloPostprocessStrategy();
             } else if (model.equals(MODEL_NAME.SEGMENTATION)) {
                 return new LocalSegmentPostprocessStrategy();

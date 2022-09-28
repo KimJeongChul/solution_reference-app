@@ -29,7 +29,7 @@ import org.tensorflow.lite.examples.detection.settings.ModelSetting;
 public class SettingActivity extends Activity {
     private DataBase dataBase;
     private ModelSetting posenetSetting;
-    private ModelSetting yolov3Setting;
+    private ModelSetting yolov4Setting;
     private ModelSetting segmentSetting;
     private ModelSetting supernovaSetting;
     private MODEL_NAME currentModelName;
@@ -108,7 +108,7 @@ public class SettingActivity extends Activity {
 
         dataBase = new DataBase(SettingActivity.this);
         posenetSetting = dataBase.loadModelSetting(MODEL_NAME.POSENET);
-        yolov3Setting = dataBase.loadModelSetting(MODEL_NAME.YOLOV3);
+        yolov4Setting = dataBase.loadModelSetting(MODEL_NAME.YOLOV4);
         segmentSetting = dataBase.loadModelSetting(MODEL_NAME.SEGMENTATION);
         supernovaSetting = dataBase.loadModelSetting(MODEL_NAME.SUPERNOVA);
         currentModelName = dataBase.loadCurrentModelName();
@@ -118,7 +118,7 @@ public class SettingActivity extends Activity {
     private void saveSetting() {
         dataBase.saveCurrentModelName(currentModelName);
         dataBase.saveModelSetting(MODEL_NAME.POSENET, posenetSetting);
-        dataBase.saveModelSetting(MODEL_NAME.YOLOV3, yolov3Setting);
+        dataBase.saveModelSetting(MODEL_NAME.YOLOV4, yolov4Setting);
         dataBase.saveModelSetting(MODEL_NAME.SEGMENTATION, segmentSetting);
         dataBase.saveModelSetting(MODEL_NAME.SUPERNOVA, supernovaSetting);
     }
@@ -128,8 +128,8 @@ public class SettingActivity extends Activity {
             mSetting = posenetSetting;
             posenetRadio.setChecked(true);
         }
-        if (name == MODEL_NAME.YOLOV3) {
-            mSetting = yolov3Setting;
+        if (name == MODEL_NAME.YOLOV4) {
+            mSetting = yolov4Setting;
             yolov4Radio.setChecked(true);
         }
         if (name == MODEL_NAME.SEGMENTATION) {
@@ -227,7 +227,7 @@ public class SettingActivity extends Activity {
         } else if (id == R.id.radio_posenet) {
             loadSetting(MODEL_NAME.POSENET);
         } else if (id == R.id.radio_yolov4) {
-            loadSetting(MODEL_NAME.YOLOV3);
+            loadSetting(MODEL_NAME.YOLOV4);
         } else if (id == R.id.radio_segment) {
             loadSetting(MODEL_NAME.SEGMENTATION);
         } else if (id == R.id.radio_supernova) {

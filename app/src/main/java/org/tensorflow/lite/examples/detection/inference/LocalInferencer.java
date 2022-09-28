@@ -46,6 +46,7 @@ public class LocalInferencer implements InferenceStrategy {
             LocalYolov3Model localYoloModel = new LocalYolov3Model(context);
             localModels.put(MODEL_NAME.YOLOV2, localYoloModel);
             localModels.put(MODEL_NAME.YOLOV3, localYoloModel);
+            localModels.put(MODEL_NAME.YOLOV4, localYoloModel);
         } catch (CvException e) {
             Log.e(TAG, "## local yolo initialize failed " + e);
         }

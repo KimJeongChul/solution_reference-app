@@ -3,6 +3,7 @@ package org.tensorflow.lite.examples.detection.enums;
 public enum MODEL_NAME {
     YOLOV2,
     YOLOV3,
+    YOLOV4,
     POSENET,
     SEGMENTATION,
     SUPERNOVA;
