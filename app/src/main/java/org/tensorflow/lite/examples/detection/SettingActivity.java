@@ -40,7 +40,7 @@ public class SettingActivity extends Activity {
     private Switch irtDisplay;
     private Switch modelNameDisplay;
     private RadioButton posenetRadio;
-    private RadioButton yolov3Radio;
+    private RadioButton yolov4Radio;
     private RadioButton segmentRadio;
     private RadioButton supernovaRadio;
     private RadioButton streamRadio;
@@ -59,7 +59,7 @@ public class SettingActivity extends Activity {
 
         goBackButton = findViewById(R.id.btn_go_back);
         posenetRadio = findViewById(R.id.radio_posenet);
-        yolov3Radio = findViewById(R.id.radio_yolov3);
+        yolov4Radio = findViewById(R.id.radio_yolov4);
         segmentRadio = findViewById(R.id.radio_segment);
         supernovaRadio = findViewById(R.id.radio_supernova);
         irtDisplay = findViewById(R.id.swt_display_irt);
@@ -130,7 +130,7 @@ public class SettingActivity extends Activity {
         }
         if (name == MODEL_NAME.YOLOV3) {
             mSetting = yolov3Setting;
-            yolov3Radio.setChecked(true);
+            yolov4Radio.setChecked(true);
         }
         if (name == MODEL_NAME.SEGMENTATION) {
             mSetting = segmentSetting;
@@ -226,7 +226,7 @@ public class SettingActivity extends Activity {
             mSetting.setFrameControl(FRAME_CONTROL.PHOTOALBUM);
         } else if (id == R.id.radio_posenet) {
             loadSetting(MODEL_NAME.POSENET);
-        } else if (id == R.id.radio_yolov3) {
+        } else if (id == R.id.radio_yolov4) {
             loadSetting(MODEL_NAME.YOLOV3);
         } else if (id == R.id.radio_segment) {
             loadSetting(MODEL_NAME.SEGMENTATION);

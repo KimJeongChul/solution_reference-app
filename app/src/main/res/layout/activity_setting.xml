@@ -99,7 +99,7 @@
                         android:textStyle="normal" />
 
                     <RadioButton
-                        android:id="@+id/radio_yolov3"
+                        android:id="@+id/radio_yolov4"
                         android:layout_width="match_parent"
                         android:layout_height="54dp"
                         android:layout_marginVertical="8px"
@@ -108,7 +108,7 @@
                         android:button="@drawable/ic_radio_button2"
                         android:fontFamily="@font/app_main_font"
                         android:onClick="onRadioButtonClicked"
-                        android:text="YOLOv3"
+                        android:text="YOLOv4"
                         android:textColor="@color/radio_text"
                         android:textFontWeight="400"
                         android:textSize="20sp"
