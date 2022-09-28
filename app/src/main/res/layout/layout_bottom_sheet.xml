@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_sheet_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/bottom_sheet_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="8dp"
+    app:behavior_hideable="false"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+
+    <RadioGroup
+        android:id="@+id/r_group"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <RadioButton
+            android:id="@+id/r_mec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_button_background"
+            android:button="@android:color/transparent"
+            android:buttonTint="#03A9F4"
+            android:checked="true"
+            android:clickable="true"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="MEC"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/r_local"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_button_background"
+            android:button="@android:color/transparent"
+            android:buttonTint="#03A9F4"
+            android:clickable="true"
+            android:gravity="center"
+            android:padding="3dp"
+            android:text="Local"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/inference"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="1dp"
+            android:text="Total Inference Time"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/inference_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="right"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="1dp"
+            android:text="Image Transfer + Response Time" />
+
+        <TextView
+            android:id="@+id/networkLatency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="Inference Time" />
+
+        <TextView
+            android:id="@+id/serverTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/darker_gray" />
+
+    <!-- TODO(b/112541284): Unhide when new NNAPI delegate is used. -->
+
+    <!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:visibility="gone">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal" >-->
+
+<!--            <FrameLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_weight="1">-->
+
+<!--                <ImageButton-->
+<!--                    android:id="@+id/imageButton"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:contentDescription="yolo"-->
+<!--                    android:tint="#00000000"-->
+<!--                    tools:srcCompat="@tools:sample/avatars[3]" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textView4"-->
+<!--                    android:layout_width="61dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="#C1FFFFFF"-->
+<!--                    android:gravity="center_horizontal"-->
+<!--                    android:text="YOLO"-->
+<!--                    android:textColor="#000000"-->
+<!--                    android:layout_marginLeft="40dp"-->
+<!--                    android:layout_marginTop="40dp"/>-->
+<!--            </FrameLayout>-->
+
+<!--            <FrameLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_weight="1">-->
+
+<!--                <ImageButton-->
+<!--                    android:id="@+id/imageButton3"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    tools:srcCompat="@tools:sample/avatars[4]" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textview6"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="40dp"-->
+<!--                    android:layout_marginTop="40dp"-->
+<!--                    android:text="POSENET"-->
+<!--                    android:background="#C1FFFFFF"-->
+<!--                    android:textColor="#000000"-->
+<!--                    />-->
+<!--            </FrameLayout>-->
+
+<!--            <FrameLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1">-->
+
+<!--                <ImageButton-->
+<!--                    android:id="@+id/imageButton2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="100dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    tools:srcCompat="@tools:sample/avatars[0]" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textView6"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="13dp"-->
+<!--                    android:layout_marginTop="40dp"-->
+<!--                    android:background="#C1FFFFFF"-->
+<!--                    android:text="SEGMENTATION"-->
+<!--                    android:textColor="#000000" />-->
+<!--            </FrameLayout>-->
+
+<!--        </LinearLayout>-->
+<!--    </ScrollView>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
+        android:orientation="horizontal"
+        android:padding="2dp">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginLeft="190dp"
+            android:layout_weight="1"
+            android:indeterminate="true"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/network_off"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_wifi_off" />
+
+        <TextView
+            android:id="@+id/inference_status"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:paddingLeft="2dp"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</LinearLayout>

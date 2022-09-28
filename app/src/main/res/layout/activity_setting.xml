@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Background">
+
+    <LinearLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="22dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_go_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/transparent"
+            android:padding="3dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_close" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:fontFamily="@font/app_main_font"
+            android:text="Settings"
+            android:textColor="@color/White"
+            android:textFontWeight="500"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/save_button"
+        android:layout_marginTop="70dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/Background"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="16dp">
+            <!-- area for transparent status bar -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/app_main_font"
+                android:text="MODEL"
+                android:textColor="@color/White"
+                android:textFontWeight="500"
+                android:textSize="24sp"
+                android:textStyle="normal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="vertical"
+                    android:padding="8px">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="26dp"
+                        android:background="@color/transparent" />
+
+                    <RadioButton
+                        android:id="@+id/radio_posenet"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/default_radio_button"
+                        android:button="@drawable/ic_radio_button2"
+                        android:fontFamily="@font/app_main_font"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="PoseNet"
+                        android:textColor="@color/radio_text"
+                        android:textFontWeight="400"
+                        android:textSize="18sp"
+                        android:textStyle="normal" />
+
+                    <RadioButton
+                        android:id="@+id/radio_yolov3"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:layout_marginVertical="8px"
+                        android:layout_weight="1"
+                        android:background="@drawable/default_radio_button"
+                        android:button="@drawable/ic_radio_button2"
+                        android:fontFamily="@font/app_main_font"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="YOLOv3"
+                        android:textColor="@color/radio_text"
+                        android:textFontWeight="400"
+                        android:textSize="20sp"
+                        android:textStyle="normal" />
+
+                    <RadioButton
+                        android:id="@+id/radio_supernova"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/default_radio_button"
+                        android:button="@drawable/ic_radio_button2"
+                        android:fontFamily="@font/app_main_font"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="SuperNova"
+                        android:textColor="@color/radio_text"
+                        android:textFontWeight="400"
+                        android:textSize="20sp"
+                        android:textStyle="normal" />
+
+                    <RadioButton
+                        android:id="@+id/radio_segment"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/default_radio_button"
+                        android:button="@drawable/ic_radio_button2"
+                        android:fontFamily="@font/app_main_font"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="Segment"
+                        android:textColor="@color/radio_text"
+                        android:textFontWeight="400"
+                        android:textSize="20sp"
+                        android:textStyle="normal"
+                        android:visibility="gone" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@color/transparent"
+                    android:padding="3dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_display" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@font/app_main_font"
+                    android:text="DISPLAY"
+                    android:textColor="@color/White"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="44dp"
+                android:layout_marginBottom="14dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/app_main_font"
+                    android:text="IRT(ms)"
+                    android:textColor="@color/LightGray"
+                    android:textFontWeight="400"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <Switch
+                    android:id="@+id/swt_display_irt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:theme="@style/CustomColorSwitch" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="44dp"
+                android:layout_marginBottom="14dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/app_main_font"
+                    android:text="Model Name"
+                    android:textColor="@color/LightGray"
+                    android:textFontWeight="400"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <Switch
+                    android:id="@+id/swt_display_model_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:theme="@style/CustomColorSwitch" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/addr_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_view_addr"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="8dp"
+                    android:background="@color/transparent"
+                    android:padding="3dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_addr" />
+
+                <TextView
+                    android:id="@+id/addr_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/img_view_addr"
+                    android:fontFamily="@font/app_main_font"
+                    android:text="ADDR"
+                    android:textColor="@color/White"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <LinearLayout
+                    android:layout_width="248dp"
+                    android:layout_height="44dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginLeft="18dp"
+                    android:layout_toRightOf="@id/addr_text"
+                    android:background="@drawable/default_edit_text_box"
+                    android:paddingHorizontal="16dp">
+
+                    <EditText
+                        android:id="@+id/edit_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_gravity="center"
+                        android:background="@color/transparent"
+                        android:fontFamily="@font/app_main_font"
+                        android:hint="Address..."
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:textColor="@color/LightGray"
+                        android:textColorHint="@color/LightGray"
+                        android:textFontWeight="400"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/token_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_view_token"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="8dp"
+                    android:background="@color/transparent"
+                    android:padding="3dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_wb_cloudy" />
+
+                <TextView
+                    android:id="@+id/token_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/img_view_token"
+                    android:fontFamily="@font/app_main_font"
+                    android:text="TOKEN"
+                    android:textColor="@color/White"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <LinearLayout
+                    android:layout_width="248dp"
+                    android:layout_height="44dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/token_text"
+                    android:background="@drawable/default_edit_text_box"
+                    android:paddingHorizontal="16dp">
+
+                    <EditText
+                        android:id="@+id/edit_token"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_gravity="center"
+                        android:background="@color/transparent"
+                        android:fontFamily="@font/app_main_font"
+                        android:hint="Token..."
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:textColor="@color/LightGray"
+                        android:textColorHint="@color/LightGray"
+                        android:textFontWeight="400"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="6dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_view_mode"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="8dp"
+                    android:background="@color/transparent"
+                    android:padding="3dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_mode" />
+
+                <TextView
+                    android:id="@+id/mode_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/img_view_mode"
+                    android:fontFamily="@font/app_main_font"
+                    android:text="MODE"
+                    android:textColor="@color/White"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <RadioGroup
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="false"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/mode_text"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <RadioButton
+                        android:id="@+id/radio_stream"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginRight="2dp"
+                        android:background="@drawable/default_radio_button"
+                        android:button="@drawable/ic_radio_button"
+                        android:fontFamily="@font/app_main_font"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="Stream"
+                        android:textColor="@color/radio_text"
+                        android:textFontWeight="400"
+                        android:textSize="10sp"
+                        android:textStyle="normal" />
+
+                    <RadioButton
+                        android:id="@+id/radio_single"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@drawable/default_radio_button"
+                        android:button="@drawable/ic_radio_button"
+                        android:fontFamily="@font/app_main_font"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="Single"
+                        android:textColor="@color/radio_text"
+                        android:textFontWeight="400"
+                        android:textSize="10sp"
+                        android:textStyle="normal" />
+
+                    <RadioButton
+                        android:id="@+id/radio_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/default_radio_button"
+                        android:button="@drawable/ic_radio_button"
+                        android:fontFamily="@font/app_main_font"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="Photo"
+                        android:textColor="@color/radio_text"
+                        android:textFontWeight="400"
+                        android:textSize="10sp"
+                        android:textStyle="normal" />
+                </RadioGroup>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:visibility="invisible"
+                tools:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/img_view_color"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="8dp"
+                    android:background="@color/transparent"
+                    android:padding="3dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/img_view_color"
+                    android:fontFamily="@font/app_main_font"
+                    android:text="COLOR"
+                    android:textColor="@color/White"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_rgb"
+                        android:layout_width="120dp"
+                        android:layout_height="44dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/default_radio_button"
+                        android:button="@drawable/ic_radio_button"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="RGB"
+                        android:textColor="@color/radio_text" />
+
+                    <RadioButton
+                        android:id="@+id/radio_bgr"
+                        android:layout_width="120dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/default_radio_button"
+                        android:button="@drawable/ic_radio_button"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="BGR"
+                        android:textColor="@color/radio_text" />
+                </RadioGroup>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:visibility="invisible"
+                tools:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/img_view_protocol"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="6dp"
+                    android:background="@color/transparent"
+                    android:padding="3dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_protocol" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/img_view_protocol"
+                    android:fontFamily="@font/app_main_font"
+                    android:text="PROTOCOL"
+                    android:textColor="@color/White"
+                    android:textFontWeight="500"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_http"
+                        android:layout_width="120dp"
+                        android:layout_height="44dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/default_radio_button"
+                        android:button="@drawable/ic_radio_button"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="HTTP"
+                        android:textColor="@color/radio_text" />
+
+                    <RadioButton
+                        android:id="@+id/radio_grpc"
+                        android:layout_width="120dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/default_radio_button"
+                        android:button="@drawable/ic_radio_button"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="GRPC"
+                        android:textColor="@color/radio_text" />
+                </RadioGroup>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/save_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/settingSaveBtn"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/default_button"
+            android:fontFamily="@font/app_main_font"
+            android:text="SAVE"
+            android:textColor="@color/White"
+            android:textFontWeight="700"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+    </RelativeLayout>
+
+</RelativeLayout>

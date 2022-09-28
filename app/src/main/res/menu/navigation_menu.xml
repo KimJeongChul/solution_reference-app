@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/pick_address"
+        android:title="Request Address"
+        android:icon="@drawable/ic_address_24dp">
+    </item>
+
+    <item
+        android:id="@+id/pick_baseurl"
+        android:title="Base URL"
+        android:icon="@drawable/ic_baseurl">
+    </item>
+    <item
+        android:id="@+id/pick_model"
+        android:title="Models"
+        android:icon="@drawable/ic_wb_cloudy">
+    </item>
+    <item
+        android:id="@+id/pick_capture_mode"
+        android:title="Capture Mode"
+        android:icon="@drawable/ic_camera_enhance_24dp">
+    </item>
+    <item
+        android:id="@+id/pick_rgb"
+        android:title="Color Format"
+        android:icon="@drawable/ic_color_">
+    </item>
+    <item
+        android:id="@+id/pick_protocol"
+        android:title="Protocol"
+        android:icon="@drawable/ic_wifi">
+        
+    </item>
+</menu>

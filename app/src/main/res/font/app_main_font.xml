@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+    <font
+        android:font = "@font/roboto400"/>
+    <font
+        android:fontStyle = "normal"
+        android:fontWeight = "100"
+        android:font = "@font/roboto100"/>
+    <font
+        android:fontStyle = "normal"
+        android:fontWeight = "200"
+        android:font = "@font/roboto200"/>
+    <font
+        android:fontStyle = "normal"
+        android:fontWeight = "400"
+        android:font = "@font/roboto400"/>
+    <font
+        android:fontStyle = "normal"
+        android:fontWeight = "500"
+        android:font = "@font/roboto500"/>
+    <font
+        android:fontStyle = "normal"
+        android:fontWeight = "700"
+        android:font = "@font/roboto700"/>
+    <font
+        android:fontStyle = "normal"
+        android:fontWeight = "900"
+        android:font = "@font/roboto900"/>
+</font-family>

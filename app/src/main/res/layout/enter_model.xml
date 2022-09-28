@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp" >
+
+    <TextView
+        android:id="@+id/textviewLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="Models"
+        android:textColor="#000000"
+        android:textSize="21sp"
+        android:textStyle="bold"/>
+
+    <RadioGroup
+        android:id="@+id/modelGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textviewLogo"
+        android:layout_marginBottom="15dp">
+
+        <RadioButton
+            android:id="@+id/r_yolo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="YOLO"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/r_posenet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="PoseNet"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/r_seg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Segmentation"
+            android:textSize="16sp"
+            android:visibility="invisible" />
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/modelGroup"
+        android:layout_marginLeft="120dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#B9FFFFFF"
+        android:text="cancel" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="100dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/modelGroup"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@id/cancel"
+        android:backgroundTint="#6F3698EE"
+        android:text="ok" />
+
+</RelativeLayout>

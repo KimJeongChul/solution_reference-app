@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Artiference</string>
+    <string name="description_info">Info</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="host">192.168.2.154</string>
+    <string name="port">50052</string>
+    <string name="yolo_size">416</string>
+    <string name="posenet_size">368</string>
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
+</resources>

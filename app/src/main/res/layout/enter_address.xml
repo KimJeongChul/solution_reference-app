@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp" >
+
+    <TextView
+        android:id="@+id/textviewLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="HTTP Address"
+        android:textColor="#000000"
+        android:textSize="21sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textviewEndPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textviewLogo"
+        android:text="Endpoint"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edittextEndPoint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textviewEndPoint"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="http://121.165.92.92:30090/endpoint/artiference-75b9793e-0436-4dbf-99ea-7c6a77226e67" />
+
+    <TextView
+        android:id="@+id/textviewToken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edittextEndPoint"
+        android:text="Token"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edittextToken"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textviewToken"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcnRpZmVyZW5jZS03NWI5NzkzZS0wNDM2LTRkYmYtOTllYS03YzZhNzcyMjZlNjciLCJhdXRob3JpdGllcyI6WyJST0xFX1NFUlZJQ0UiXSwiaWF0IjoxNTc2MDU1MjEyLCJleHAiOjE1NzYxNDE2MTJ9.UGDx-HhEFsnTvHeZddQd_qpPUrsKS9ZA-NMd3_1HRvI" />
+
+    <LinearLayout
+        android:id="@+id/artiference_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edittextToken"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textviewArtiference"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="15dp"
+            android:text="Inference Name: "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/warning_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    app:srcCompat="@drawable/ic_priority_high" />
+
+                <TextView
+                    android:id="@+id/warning_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Connection failed."
+                    android:textColor="#CB0000"
+                    android:textSize="8sp" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/artiference_name"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:hint="search .."
+                android:inputType="text"
+                android:text=""
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/import_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="Import"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/artiference_layout"
+        android:layout_marginLeft="120dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#B9FFFFFF"
+        android:text="cancel" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="100dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/artiference_layout"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@id/cancel"
+        android:backgroundTint="#6F3698EE"
+        android:text="ok" />
+
+</RelativeLayout>

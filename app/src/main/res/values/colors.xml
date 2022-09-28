@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#98999b</color>
+    <color name="colorPrimaryDark">#404041</color>
+    <color name="colorAccent">#d2d0d1</color>
+    <color name="semi_transparent">#66000000</color>
+    <color name="colorSemiBlack">#050716</color>
+    <color name="transparent">#00000000</color>
+    <color name="SKOrange">#F08000</color>
+    <color name="SKOrange10">#1AF08000</color>
+    <color name="SKOrange30">#4DF08000</color>
+    <color name="SKOrange50">#80F08000</color>
+    <color name="SKOrange70">#B3F08000</color>
+    <color name="SKOrange90">#E6F08000</color>
+    <color name="SKRed">#E1002A</color>
+    <color name="LightGray">#B5B5C2</color>
+    <color name="Background">#202024</color>
+    <color name="Background2">#16161B</color>
+    <color name="Gray">#313136</color>
+    <color name="White">#FFFFFF</color>
+    <color name="Black">#000000</color>
+    <color name="SemiTransparent">#66000000</color>
+</resources>
