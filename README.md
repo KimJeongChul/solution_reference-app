@@ -26,11 +26,10 @@ It is recommended that the application be run on the device rather than on the e
 
 <u>You have to explicitly download the model</u> from <u>google-drive</u> or, 
 
-- yolov3: **[yolov3.weights](https://pjreddie.com/media/files/yolov3.weights)**
+- yolov4: **[yolov4.weights](https://github.com/AlexeyAB/darknet/releases/download/yolov4/yolov4.weights)**
+  - https://github.com/alexeyab/darknet/releases
 
 - posenet:  **[pose_iter_440000.caffemodel](http://posefs1.perception.cs.cmu.edu/Users/ZheCao/pose_iter_440000.caffemodel)**
-
-- segmentation:  **[frozen_inference_graph.pb](http://download.tensorflow.org/models/object_detection/mask_rcnn_inception_v2_coco_2018_01_28.tar.gz)**
 
 Extract the zip(if compressed) to get the **frozen_inference_graph.pb**, **pose_iter_440000.caffemodel**, **yolov3.weights** and put them in 'reference-app\app\assets' folder. 
 
@@ -40,12 +39,9 @@ _Please do not delete the assets folder content_. In particular, do not erase a 
 
 If you explicitly deleted the files, then please re-download from <u>google-drive</u> or copy from, 
 
-- yolov3: **[yolov3.cfg](https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg)**
+- yolov4: **[yolov4.cfg](https://github.com/AlexeyAB/darknet/archive/refs/tags/yolov4.zip)**
+  - Extract yolov4.zip cfg/yolov4.cfg
 
 - posenet: **[pose_deploy_linevec.prototxt](https://github.com/spmallick/learnopencv/blob/master/OpenPose-Multi-Person/pose/coco/pose_deploy_linevec.prototxt)** 
 
   **>  rename it to 'pose_deploy.prototxt'**
-
-- segmentation: **[mask_rcnn_inception_v2_coco_2018_01_28.pbtxt](https://github.com/spmallick/learnopencv/blob/master/Mask-RCNN/mask_rcnn_inception_v2_coco_2018_01_28.pbtxt)**
-
-  **> rename it to 'mask_rcnn_inception.pbtxt'**
