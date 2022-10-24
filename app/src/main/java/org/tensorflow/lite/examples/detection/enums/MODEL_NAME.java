@@ -4,9 +4,7 @@ public enum MODEL_NAME {
     YOLOV2,
     YOLOV3,
     YOLOV4,
-    POSENET,
-    SEGMENTATION,
-    SUPERNOVA;
+    POSENET;
 
     public boolean isYolov2() {
         return this.equals(MODEL_NAME.YOLOV2);

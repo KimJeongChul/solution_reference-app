@@ -115,21 +115,6 @@
                         android:textStyle="normal" />
 
                     <RadioButton
-                        android:id="@+id/radio_supernova"
-                        android:layout_width="match_parent"
-                        android:layout_height="54dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/default_radio_button"
-                        android:button="@drawable/ic_radio_button2"
-                        android:fontFamily="@font/app_main_font"
-                        android:onClick="onRadioButtonClicked"
-                        android:text="SuperNova"
-                        android:textColor="@color/radio_text"
-                        android:textFontWeight="400"
-                        android:textSize="20sp"
-                        android:textStyle="normal" />
-
-                    <RadioButton
                         android:id="@+id/radio_segment"
                         android:layout_width="match_parent"
                         android:layout_height="64dp"

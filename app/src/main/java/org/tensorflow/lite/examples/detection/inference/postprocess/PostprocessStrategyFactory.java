@@ -16,8 +16,6 @@ public class PostprocessStrategyFactory {
         if (mode.equals(MODE.LOCAL)) {
             if (model.equals(MODEL_NAME.YOLOV2) || model.equals(MODEL_NAME.YOLOV3) || model.equals(MODEL_NAME.YOLOV4)) {
                 return new LocalYoloPostprocessStrategy();
-            } else if (model.equals(MODEL_NAME.SEGMENTATION)) {
-                return new LocalSegmentPostprocessStrategy();
             } else if (model.equals(MODEL_NAME.POSENET)) {
                 return new LocalPosenetPostprocessStrategy();
             } else {
@@ -39,8 +37,6 @@ public class PostprocessStrategyFactory {
                     return new AixYoloPostprocessStrategy();
                 } else if (model.equals(MODEL_NAME.POSENET)) {
                     return new AixPosenetPostprocessStrategy();
-                } else if (model.equals(MODEL_NAME.SUPERNOVA)) {
-                    return new AixSupernovaPostprocessStrategy();
                 } else {
                     throw new RuntimeException(String.format("Not supported model name:%s",
                             info.getModelName().toString()));

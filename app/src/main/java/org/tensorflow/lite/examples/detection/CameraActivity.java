@@ -158,15 +158,6 @@ public class CameraActivity extends AppCompatActivity {
                 Log.i(TAG, "## draw without wait");
                 viewManager.drawWithoutWait(info);
                 stopTrasportAnimation();
-                if (modelName == MODEL_NAME.SUPERNOVA) {
-                    // if super nova save photo to album
-                    Map<DRAW_TYPE, Object> drawable = info.getDrawable();
-                    if (info.getDrawable() != null && info.getDrawable().containsKey(DRAW_TYPE.IMAGE)) {
-                        Bitmap image = (Bitmap) drawable.get(DRAW_TYPE.IMAGE);
-                        saveImage(image);
-                        toast("Picture Saved");
-                    }
-                }
             }
         }
     };
@@ -266,23 +257,13 @@ public class CameraActivity extends AppCompatActivity {
                 // the preview size of image should be same as canvas view
                 viewManager.setBackground(pickedPhoto);
                 InferenceData data;
-                if (modelName == MODEL_NAME.SUPERNOVA) {
-                    // super nova need original image
-                    // because it's result is just double sized image
-                    // so double sized image will be resized to canvas
-                    // the ratio with background is same as double size image drawn canvas
-                    data = InferenceData.builder()
-                            .model(model)
-                            .image(pickedPhoto)
-                            .orientated(0)
-                            .previewSize(new Size(pickedPhoto.getWidth(), pickedPhoto.getHeight())).build();
-                } else {
-                    data = InferenceData.builder()
-                            .model(model)
-                            .image(resized)
-                            .orientated(0)
-                            .previewSize(canvasSize).build();
-                }
+
+                data = InferenceData.builder()
+                        .model(model)
+                        .image(resized)
+                        .orientated(0)
+                        .previewSize(canvasSize).build();
+
                 startTrasportAnimation();
                 inferenceManager.feed(data);
                 pickedPhoto = null;

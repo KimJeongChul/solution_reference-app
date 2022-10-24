@@ -61,7 +61,6 @@ public class SettingActivity extends Activity {
         posenetRadio = findViewById(R.id.radio_posenet);
         yolov4Radio = findViewById(R.id.radio_yolov4);
         segmentRadio = findViewById(R.id.radio_segment);
-        supernovaRadio = findViewById(R.id.radio_supernova);
         irtDisplay = findViewById(R.id.swt_display_irt);
         modelNameDisplay = findViewById(R.id.swt_display_model_name);
         addressEdit = findViewById(R.id.edit_address);
@@ -109,8 +108,6 @@ public class SettingActivity extends Activity {
         dataBase = new DataBase(SettingActivity.this);
         posenetSetting = dataBase.loadModelSetting(MODEL_NAME.POSENET);
         yolov4Setting = dataBase.loadModelSetting(MODEL_NAME.YOLOV4);
-        segmentSetting = dataBase.loadModelSetting(MODEL_NAME.SEGMENTATION);
-        supernovaSetting = dataBase.loadModelSetting(MODEL_NAME.SUPERNOVA);
         currentModelName = dataBase.loadCurrentModelName();
         loadSetting(currentModelName);
     }
@@ -119,8 +116,6 @@ public class SettingActivity extends Activity {
         dataBase.saveCurrentModelName(currentModelName);
         dataBase.saveModelSetting(MODEL_NAME.POSENET, posenetSetting);
         dataBase.saveModelSetting(MODEL_NAME.YOLOV4, yolov4Setting);
-        dataBase.saveModelSetting(MODEL_NAME.SEGMENTATION, segmentSetting);
-        dataBase.saveModelSetting(MODEL_NAME.SUPERNOVA, supernovaSetting);
     }
 
     private void loadSetting(MODEL_NAME name) {
@@ -131,14 +126,6 @@ public class SettingActivity extends Activity {
         if (name == MODEL_NAME.YOLOV4) {
             mSetting = yolov4Setting;
             yolov4Radio.setChecked(true);
-        }
-        if (name == MODEL_NAME.SEGMENTATION) {
-            mSetting = segmentSetting;
-            segmentRadio.setChecked(true);
-        }
-        if (name == MODEL_NAME.SUPERNOVA) {
-            mSetting = supernovaSetting;
-            supernovaRadio.setChecked(true);
         }
         currentModelName = name;
         addressEdit.setText(mSetting.getAddress());
@@ -228,10 +215,6 @@ public class SettingActivity extends Activity {
             loadSetting(MODEL_NAME.POSENET);
         } else if (id == R.id.radio_yolov4) {
             loadSetting(MODEL_NAME.YOLOV4);
-        } else if (id == R.id.radio_segment) {
-            loadSetting(MODEL_NAME.SEGMENTATION);
-        } else if (id == R.id.radio_supernova) {
-            loadSetting(MODEL_NAME.SUPERNOVA);
         }
     }
 }

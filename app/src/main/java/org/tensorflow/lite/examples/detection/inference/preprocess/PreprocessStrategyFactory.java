@@ -15,8 +15,6 @@ public class PreprocessStrategyFactory {
                         data.getModelName() == MODEL_NAME.YOLOV3 ||
                         data.getModelName() == MODEL_NAME.YOLOV2)) {
             return new AixYoloPosenetPreprocessorStrategy();
-        } else if (data.isMec() && data.getModelName() == MODEL_NAME.SUPERNOVA) {
-            return new AixSupernovaPreprocessorStarategy();
         } else {
             return null;
         }
