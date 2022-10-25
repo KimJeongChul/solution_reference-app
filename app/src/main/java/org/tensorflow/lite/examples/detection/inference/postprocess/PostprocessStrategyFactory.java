@@ -14,7 +14,7 @@ public class PostprocessStrategyFactory {
         MODE mode = info.getMode();
         DEVICE_TYPE device = info.getDeviceType();
         if (mode.equals(MODE.LOCAL)) {
-            if (model.equals(MODEL_NAME.YOLOV2) || model.equals(MODEL_NAME.YOLOV3) || model.equals(MODEL_NAME.YOLOV4)) {
+            if (model.equals(MODEL_NAME.YOLOV3) || model.equals(MODEL_NAME.YOLOV4)) {
                 return new LocalYoloPostprocessStrategy();
             } else if (model.equals(MODEL_NAME.POSENET)) {
                 return new LocalPosenetPostprocessStrategy();
@@ -24,7 +24,7 @@ public class PostprocessStrategyFactory {
             }
         } else {
             if (device.equals(DEVICE_TYPE.GPU)) {
-                if (model.equals(MODEL_NAME.YOLOV2) || model.equals(MODEL_NAME.YOLOV3)) {
+                if (model.equals(MODEL_NAME.YOLOV3) || model.equals(MODEL_NAME.YOLOV4)) {
                     return new GpuYoloPostprocessStrategy();
                 } else if (model.equals(MODEL_NAME.POSENET)) {
                     return new GpuPosenetPostprocessStrategy();
@@ -33,7 +33,7 @@ public class PostprocessStrategyFactory {
                             info.getModelName().toString()));
                 }
             } else if (device.equals(DEVICE_TYPE.AIX)) {
-                if (model.equals(MODEL_NAME.YOLOV2) || model.equals(MODEL_NAME.YOLOV3)) {
+                if (model.equals(MODEL_NAME.YOLOV3) || model.equals(MODEL_NAME.YOLOV4)) {
                     return new AixYoloPostprocessStrategy();
                 } else if (model.equals(MODEL_NAME.POSENET)) {
                     return new AixPosenetPostprocessStrategy();

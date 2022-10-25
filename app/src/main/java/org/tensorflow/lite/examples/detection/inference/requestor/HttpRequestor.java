@@ -43,6 +43,7 @@ public class HttpRequestor implements Requestor {
         }
         if (data.getDeviceType() == DEVICE_TYPE.AIX &&
                 (data.getModelName() == MODEL_NAME.YOLOV3 ||
+                        data.getModelName() == MODEL_NAME.YOLOV4 ||
                         data.getModelName() == MODEL_NAME.POSENET)) {
             headers.put("Content-Type", "application/octet-stream");
             headers.put("Accept", "application/octet-stream");

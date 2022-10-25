@@ -42,20 +42,12 @@ public class LocalInferencer implements InferenceStrategy {
         try {
             Log.i(TAG, "## initialize local yolo model");
             LocalYolov4Model localYoloModel = new LocalYolov4Model(context);
-            localModels.put(MODEL_NAME.YOLOV2, localYoloModel);
             localModels.put(MODEL_NAME.YOLOV3, localYoloModel);
             localModels.put(MODEL_NAME.YOLOV4, localYoloModel);
         } catch (CvException e) {
             Log.e(TAG, "## local yolo initialize failed " + e);
         }
 
-//        try {
-//            Log.i(TAG, "## initialize local segment model");
-//            LocalSegmentModel localSegmentModel = new LocalSegmentModel(context);
-//            localModels.put(MODEL_NAME.SEGMENTATION, localSegmentModel);
-//        } catch (CvException e) {
-//            Log.e(TAG, "## local segmenation initialization failed " + e);
-//        }
         setModel(this.modelInfo);
     }
 

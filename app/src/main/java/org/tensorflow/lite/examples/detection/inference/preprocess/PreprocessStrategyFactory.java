@@ -12,8 +12,8 @@ public class PreprocessStrategyFactory {
             return new LocalGPUPreprocessorStrategy();
         } else if (data.isMec() &&
                 (data.getModelName() == MODEL_NAME.POSENET ||
-                        data.getModelName() == MODEL_NAME.YOLOV3 ||
-                        data.getModelName() == MODEL_NAME.YOLOV2)) {
+                        data.getModelName() == MODEL_NAME.YOLOV4 ||
+                        data.getModelName() == MODEL_NAME.YOLOV3)) {
             return new AixYoloPosenetPreprocessorStrategy();
         } else {
             return null;

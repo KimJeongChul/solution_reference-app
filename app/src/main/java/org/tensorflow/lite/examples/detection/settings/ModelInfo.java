@@ -23,12 +23,10 @@ public class ModelInfo {
     private static int LOCAL_CROP_SIZE = 608;
     private static int POSENET_AIX_CROP_SIZE = 513;
     private static int POSENET_GPU_CROP_SIZE = 513;
-    private static int YOLOV4_AIX_CROP_SIZE = 500;
-    private static int YOLOV4_GPU_CROP_SIZE = 500;
+    private static int YOLOV4_AIX_CROP_SIZE = 416;
+    private static int YOLOV4_GPU_CROP_SIZE = 416;
     private static int YOLOV3_AIX_CROP_SIZE = 608;
     private static int YOLOV3_GPU_CROP_SIZE = 416;
-    private static int YOLOV2_AIX_CROP_SIZE = 608;
-    private static int YOLOV2_GPU_CROP_SIZE = 608;
     private static Map<MODEL_NAME, Map<DEVICE_TYPE, Integer>> cropMap;
     private static Map<MODEL_NAME, DEVICE_TYPE> deviceTypeMap;
     private static Map<MODEL_NAME, VERSION> versionMap;
@@ -46,14 +44,11 @@ public class ModelInfo {
         versionMap = new HashMap<>();
         cropMap = new HashMap<>();
         cropMap.put(MODEL_NAME.POSENET, new HashMap<>());
-        cropMap.put(MODEL_NAME.YOLOV2, new HashMap<>());
         cropMap.put(MODEL_NAME.YOLOV3, new HashMap<>());
         cropMap.put(MODEL_NAME.YOLOV4, new HashMap<>());
 
         cropMap.get(MODEL_NAME.POSENET).put(DEVICE_TYPE.AIX, POSENET_AIX_CROP_SIZE);
         cropMap.get(MODEL_NAME.POSENET).put(DEVICE_TYPE.GPU, POSENET_GPU_CROP_SIZE);
-        cropMap.get(MODEL_NAME.YOLOV2).put(DEVICE_TYPE.AIX, YOLOV2_AIX_CROP_SIZE);
-        cropMap.get(MODEL_NAME.YOLOV2).put(DEVICE_TYPE.GPU, YOLOV2_GPU_CROP_SIZE);
         cropMap.get(MODEL_NAME.YOLOV3).put(DEVICE_TYPE.AIX, YOLOV3_AIX_CROP_SIZE);
         cropMap.get(MODEL_NAME.YOLOV3).put(DEVICE_TYPE.GPU, YOLOV3_GPU_CROP_SIZE);
         cropMap.get(MODEL_NAME.YOLOV4).put(DEVICE_TYPE.AIX, YOLOV4_AIX_CROP_SIZE);
@@ -63,9 +58,7 @@ public class ModelInfo {
         deviceTypeMap.put(MODEL_NAME.POSENET, DEVICE_TYPE.AIX);
         deviceTypeMap.put(MODEL_NAME.YOLOV3, DEVICE_TYPE.AIX);
         deviceTypeMap.put(MODEL_NAME.YOLOV4, DEVICE_TYPE.AIX);
-        deviceTypeMap.put(MODEL_NAME.YOLOV2, DEVICE_TYPE.AIX);
         versionMap.put(MODEL_NAME.POSENET, VERSION.V2003);
-        versionMap.put(MODEL_NAME.YOLOV2, VERSION.V2003);
         versionMap.put(MODEL_NAME.YOLOV3, VERSION.V2003);
         versionMap.put(MODEL_NAME.YOLOV4, VERSION.V2003);
     }
@@ -76,7 +69,7 @@ public class ModelInfo {
         } else {
             if (modelName.equals(MODEL_NAME.YOLOV3)) {
                 // because gpu version is only yolov2
-                int size = cropMap.get(MODEL_NAME.YOLOV2).get(deviceType);
+                int size = cropMap.get(modelName).get(deviceType);
                 return new Size(size, size);
             } else {
                 int size = cropMap.get(modelName).get(deviceType);

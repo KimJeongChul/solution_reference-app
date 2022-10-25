@@ -98,7 +98,7 @@ public class InferenceFlowManager {
 
     if (!OpenCVLoader.initDebug()) {
       Log.d(TAG, "## try to load opencv");
-      OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_0_0, this.context, mLoaderCallback);
+      OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION, this.context, mLoaderCallback);
     } else {
       Log.d(TAG, "## opencv already loaded");
       mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
