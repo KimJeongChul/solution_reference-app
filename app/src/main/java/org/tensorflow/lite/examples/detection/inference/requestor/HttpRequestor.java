@@ -41,15 +41,17 @@ public class HttpRequestor implements Requestor {
         if (this.address.getHttpToken() != null && this.address.getHttpToken() != "") {
             headers.put("Authorization", "Bearer " + this.address.getHttpToken());
         }
-        if (data.getDeviceType() == DEVICE_TYPE.AIX &&
-                (data.getModelName() == MODEL_NAME.YOLOV3 ||
-                        data.getModelName() == MODEL_NAME.YOLOV4 ||
-                        data.getModelName() == MODEL_NAME.POSENET)) {
+        if (data.getDeviceType() == DEVICE_TYPE.AIX && data.getModelName() == MODEL_NAME.YOLOV4) {
             headers.put("Content-Type", "application/octet-stream");
             headers.put("Accept", "application/octet-stream");
-            headers.put("InferRequest", "{'batch_size': 1, 'input': {'name': 'INPUT0'}, 'output':" +
-                    " [{'name': 'OUTPUT0'}, {'name': 'OUTPUT1'}, {'name': 'OUTPUT2'}, {'name': 'OUTPUT3'}]}");
+            headers.put("InferRequest", "{'batch_size': 1, 'input': {'name': 'input_1:0'}, 'output':" +
+                    " [{'name': 'Identity:0'}, {'name': 'Identity_1:0'}, {'name': 'Identity_2:0'}]}");
 
+        } else if (data.getDeviceType() == DEVICE_TYPE.AIX && data.getModelName() == MODEL_NAME.POSENET ) {
+            headers.put("Content-Type", "application/octet-stream");
+            headers.put("Accept", "application/octet-stream");
+            headers.put("InferRequest", "{'batch_size': 1, 'input': {'name': 'input'}, 'output':" +
+                    " [{'name': 'output'}]}");
         }
         return headers;
     }
