@@ -74,8 +74,7 @@ public class AixYoloPosenetPreprocessorStrategy extends PreprocessStrategy {
     public byte[] execute(Bitmap image, Size modelInputSize, int oriented, MODEL_NAME name) {
         Mat argbImage = new Mat();
         Mat rgbImage = new Mat();
-        Mat resultMat = new Mat();
-
+        
         double modelWidth = modelInputSize.width;
         double modelHeight = modelInputSize.height;
 
